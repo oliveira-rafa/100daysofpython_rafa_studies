@@ -2,7 +2,7 @@ from hashlib import new
 from re import A
 
 
-alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
 direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
 text = input("Type your message:\n").lower()
@@ -31,7 +31,11 @@ def encrypt(text,shift):
     for letter in text:
         index = alphabet.index(letter)  
         
-        new_index = index+shift
+        if shift < 26: 
+            new_index = index+shift
+        else:
+            shift = shift - 26
+            new_index = index+shift
 
         cipher_text = cipher_text + alphabet[new_index]
     
@@ -40,14 +44,7 @@ def encrypt(text,shift):
 encrypt(text,shift)
 
 
-# Comentario:
+# Comments:
 """
-A professora usou o esquema de dobrar o tamanho da lista pra não mexer na lógica
-mas na real isso vai continuar dando problema se o shift for maior do que o
-tamanho da lista. Só resolve se você continuar usando um tamanho de shift menor
-do que o tamanho da lista.
-
-Acho interessante desenvolver um método que funcione com qualquer shift.
-
-Gastei muito tempo sem muito sucesso e larguei pra la. kkkk
+Just added an extra step to make sure that if a user selects a shift value bigger than 26 the code will not break due to the end on the letters in the alphabet.
 """
