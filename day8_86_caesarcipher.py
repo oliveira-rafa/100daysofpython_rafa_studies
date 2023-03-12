@@ -44,7 +44,7 @@ def decrypt(text,shift):
 
         cipher_text = cipher_text + alphabet[new_index]
     
-    print(f"The encoded text is {cipher_text}.")
+    print(f"The decode text is {cipher_text}.")
 
 #TODO-3: Check if the user wanted to encrypt or decrypt the message by checking the 'direction' variable. Then call the correct function based on that 'drection' variable. You should be able to test the code to encrypt *AND* decrypt a message.
 
