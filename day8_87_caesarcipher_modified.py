@@ -51,6 +51,6 @@ def ceasar(direction, text, shift):
             cipher_text = cipher_text + alphabet[new_index]
     print(f"The {direction} text is {cipher_text}." )
 
-#TODO-2: Call the caesaenr() function, passing over the 'text', 'shift' and 'direction' values.
+#TODO-2: Call the caesar() function, passing over the 'text', 'shift' and 'direction' values.
 
 ceasar(direction=direction, text=text, shift=shift)
